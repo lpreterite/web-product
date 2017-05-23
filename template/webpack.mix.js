@@ -1,6 +1,6 @@
 const path = require('path');
 const { mix } = require('laravel-mix');
-mix.options({notifications: false});
+mix.options({notifications: false, processCssUrls: false});
 mix.webpackConfig({
     module: {
         rules: [
@@ -34,13 +34,8 @@ mix.webpackConfig({
 
 mix.js('src/main.js', '{{ output }}/assets/js/')
    .sass('src/style.scss', '{{ output }}/assets/css/')
-   .options({
-        processCssUrls: false
-   })
    .extract([
         'vue'
-    ]);
-
-mix
-    .copy('src/index.html', '{{ output }}/')
-    .copyDirectory('src/assets', '{{ output }}/assets/');
+    ])
+   .copy('src/index.html', '{{ output }}/')
+   .copyDirectory('src/assets', '{{ output }}/assets/');
