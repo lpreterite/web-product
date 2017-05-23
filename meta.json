@@ -1,0 +1,26 @@
+{
+  "prompts": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "label": "Project name"
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "label": "Project description",
+      "default": "A Vue.js project"
+    },
+    "author": {
+      "type": "string",
+      "label": "Author"
+    },
+    "output": {
+      "type": "string",
+      "required": true,
+      "label": "Project output folder name",
+      "default": "public"
+    }
+  },
+  "completeMessage": "{{#inPlace}}To get started:\n\n  npm install\n  npm run dev \n npm run hot.{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev \n npm run hot.{{/inPlace}}"
+}
